@@ -177,13 +177,9 @@ const updateTrade = async (req, res, next) => {
     if (!type) {
       throw new BadRequest("Type is required");
     } else {
-      if (type === "SELL") {
-        if (!(req.body.tickerSymbol && req.body.shares)) {
-          throw new BadRequest("TickerSymbol or Shares missing");
-        }
-      } else {
-        if (!(req.body.tickerSymbol && req.body.shares && req.body.buyPrice)) {
-          throw new BadRequest("Ticker Symbol, Shares, Buy Price missing");
+      if (type === "BUY") {
+        if (!req.body.buyPrice) {
+          throw new BadRequest("Buy Price is required");
         }
       }
     }
