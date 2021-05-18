@@ -16,7 +16,6 @@ const addTrade = async (tickerSymbol, shares, type, price) => {
 //Selling the shares
 const sellShares = async (req, res, next) => {
   try {
-    console.log("helll");
     const errors = validationResult(req).mapped();
     if (Object.keys(errors).length) {
       return errorResponse(res, 400, errors);
