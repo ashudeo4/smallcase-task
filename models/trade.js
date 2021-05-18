@@ -3,7 +3,6 @@ const mongoose = require("mongoose");
 const tradeSchema = new mongoose.Schema({
   tickerSymbol: {
     type: String,
-    minlength: 4,
   },
   shares: {
     type: Number,
