@@ -16,6 +16,10 @@ const tradeSchema = new mongoose.Schema({
     enum: ["BUY", "SELL"],
     default: "BUY",
   },
+  date: {
+    type: Date,
+    default: Date.now(),
+  },
 });
 
 module.exports = mongoose.model("Trade", tradeSchema);
